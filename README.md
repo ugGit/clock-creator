@@ -1,3 +1,5 @@
+https://github.com/ugGit/clock-creator/actions/workflows/node.js.yml/badge.svg
+
 # Next.js + Jest
 
 This example shows how to configure Jest to work with Next.js.
