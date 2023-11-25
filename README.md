@@ -1,4 +1,4 @@
-https://github.com/ugGit/clock-creator/actions/workflows/node.js.yml/badge.svg
+![example workflow](https://github.com/ugGit/clock-creator/actions/workflows/node.js.yml/badge.svg)
 
 # Next.js + Jest
 
