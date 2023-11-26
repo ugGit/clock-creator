@@ -1,5 +1,6 @@
 ![testing_workflow_status](https://github.com/ugGit/clock-creator/actions/workflows/testing.yml/badge.svg)
 [![codecov](https://codecov.io/gh/ugGit/clock-creator/graph/badge.svg?token=1BJ0Q27WSP)](https://codecov.io/gh/ugGit/clock-creator)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/uggit/clock-creator)
 
 # Next.js + Jest
 
