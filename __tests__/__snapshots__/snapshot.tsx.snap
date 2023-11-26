@@ -7,7 +7,7 @@ exports[`renders homepage unchanged 1`] = `
   >
     <main>
       <h1
-        class="title"
+        class="text-3xl font-bold underline"
       >
         Welcome to 
         <a
