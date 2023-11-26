@@ -10,11 +10,6 @@
     "test:codecov": "jest --coverage",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
-  },
   "dependencies": {
     "next": "latest",
     "react": "^18.2.0",
