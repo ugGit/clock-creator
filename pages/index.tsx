@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "@/pages/index.module.css";
+import Layout from "@/components/layout";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head>
         <title>Create Next App</title>
         <link rel='icon' href='/favicon.ico' />
@@ -66,6 +67,6 @@ export default function Home() {
           </span>
         </a>
       </footer>
-    </div>
+    </Layout>
   );
 }

@@ -1,3 +1,9 @@
+import Layout from "@/components/layout";
+
 export default function AboutUs() {
-  return <h1>About Us</h1>;
+  return (
+    <Layout>
+      <h1>About Us</h1>
+    </Layout>
+  );
 }
