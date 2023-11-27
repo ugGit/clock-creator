@@ -3,7 +3,7 @@
 exports[`renders homepage unchanged 1`] = `
 <div>
   <div
-    class="container"
+    id="appContainer"
   >
     <main>
       <h1
@@ -19,10 +19,12 @@ exports[`renders homepage unchanged 1`] = `
       <p
         class="description"
       >
-        Get started by editing 
-        <code>
-          pages/index.js
-        </code>
+        Read 
+        <a
+          href="/about-us"
+        >
+          this page!
+        </a>
       </p>
       <div
         class="grid"
@@ -92,7 +94,7 @@ exports[`renders homepage unchanged 1`] = `
             decoding="async"
             height="16"
             loading="lazy"
-            src="/vercel.svg"
+            src="/images/vercel.svg"
             style="color: transparent;"
             width="72"
           />
