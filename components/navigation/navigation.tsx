@@ -14,8 +14,10 @@ type NavigationItem = {
 };
 
 const navigation: NavigationItem[] = [
+  { name: "Home", href: "#", current: true },
+  { name: "Designer", href: "#", current: false },
   { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "About Us", href: "#", current: false },
 ];
 
 function classNames(...classes: string[]): string {
