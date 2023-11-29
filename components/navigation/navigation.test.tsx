@@ -13,4 +13,12 @@ describe("Navigation Component", () => {
       expect(navigationItem).toBeInTheDocument();
     });
   });
+
+  it("should not show context menu upon initalization", () => {
+    render(<Navigation />);
+
+    // Check if no context menu is visible containing the 'Your Profile' item
+    const contextMenu = screen.queryByText("Your Profile");
+    expect(contextMenu).not.toBeInTheDocument();
+  });
 });
