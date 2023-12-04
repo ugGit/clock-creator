@@ -6,7 +6,11 @@
 import { useEffect, useRef } from "react";
 import styles from "./clock.module.css";
 
-export default function Clock() {
+interface Props {
+  font: string;
+}
+
+export default function Clock({ font = "sans-serif" }: Props) {
   const hourHand = useRef(null);
   const minuteHand = useRef(null);
   const secondHand = useRef(null);
@@ -37,7 +41,7 @@ export default function Clock() {
   }, []);
 
   return (
-    <div className={`${styles.clock}`}>
+    <div className={`${styles.clock}`} style={{ fontFamily: font }}>
       <div
         className={`${styles.hand} ${styles.hour}`}
         ref={hourHand}
