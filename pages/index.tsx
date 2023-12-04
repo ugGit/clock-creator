@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import styles from "@/pages/index.module.css";
 import Layout from "@/components/layout";
+import Clock from "@/components/clock/clock";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </Head>
 
       <main>
+        <Clock font='Brush Script MT' />
         <h1 className='text-3xl font-bold underline'>
           Welcome to <a href='https://nextjs.org'>Next.js!</a>
         </h1>
