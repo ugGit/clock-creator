@@ -38,9 +38,21 @@ export default function Clock() {
 
   return (
     <div className={`${styles.clock}`}>
-      <div className={`${styles.hand} ${styles.hour}`} ref={hourHand}></div>
-      <div className={`${styles.hand} ${styles.minute}`} ref={minuteHand}></div>
-      <div className={`${styles.hand} ${styles.second}`} ref={secondHand}></div>
+      <div
+        className={`${styles.hand} ${styles.hour}`}
+        ref={hourHand}
+        data-testid='hour-hand'
+      ></div>
+      <div
+        className={`${styles.hand} ${styles.minute}`}
+        ref={minuteHand}
+        data-testid='minute-hand'
+      ></div>
+      <div
+        className={`${styles.hand} ${styles.second}`}
+        ref={secondHand}
+        data-testid='second-hand'
+      ></div>
       <div className={`${styles.number} ${styles.number1}`}>1</div>
       <div className={`${styles.number} ${styles.number2}`}>2</div>
       <div className={`${styles.number} ${styles.number3}`}>3</div>
