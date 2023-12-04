@@ -3,13 +3,13 @@
  * https://github.com/WebDevSimplified/JavaScript-Clock/tree/master.
  *
  */
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./clock.module.css";
 
 export default function Clock() {
-  const hourHand: Element = document.querySelector("[data-hour-hand]");
-  const minuteHand: Element = document.querySelector("[data-minute-hand]");
-  const secondHand: Element = document.querySelector("[data-second-hand]");
+  const hourHand = useRef(null);
+  const minuteHand = useRef(null);
+  const secondHand = useRef(null);
 
   function setClock(): void {
     const currentDate: Date = new Date();
@@ -21,8 +21,11 @@ export default function Clock() {
     setRotation(hourHand, hoursRatio);
   }
 
-  function setRotation(element: Element, rotationRatio: number): void {
-    element.style.setProperty("--rotation", `${rotationRatio * 360}`);
+  function setRotation(elementRef, rotationRatio: number): void {
+    elementRef.current.style.setProperty(
+      "--rotation",
+      `${rotationRatio * 360}`
+    );
   }
 
   useEffect(() => {
@@ -35,9 +38,9 @@ export default function Clock() {
 
   return (
     <div className={`${styles.clock}`}>
-      <div className={`${styles.hand} ${styles.hour}`} data-hour-hand></div>
-      <div className={`${styles.hand} ${styles.minute}`} data-minute-hand></div>
-      <div className={`${styles.hand} ${styles.second}`} data-second-hand></div>
+      <div className={`${styles.hand} ${styles.hour}`} ref={hourHand}></div>
+      <div className={`${styles.hand} ${styles.minute}`} ref={minuteHand}></div>
+      <div className={`${styles.hand} ${styles.second}`} ref={secondHand}></div>
       <div className={`${styles.number} ${styles.number1}`}>1</div>
       <div className={`${styles.number} ${styles.number2}`}>2</div>
       <div className={`${styles.number} ${styles.number3}`}>3</div>
