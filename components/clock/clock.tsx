@@ -15,7 +15,7 @@ export default function Clock({ font = "sans-serif" }: Props) {
   const minuteHand = useRef(null);
   const secondHand = useRef(null);
 
-  function setClock(): void {
+  function setCurrentTimeOnClock(): void {
     const currentDate: Date = new Date();
     const secondsRatio: number = currentDate.getSeconds() / 60;
     const minutesRatio: number = (secondsRatio + currentDate.getMinutes()) / 60;
@@ -33,8 +33,8 @@ export default function Clock({ font = "sans-serif" }: Props) {
   }
 
   useEffect(() => {
-    setClock();
-    const interval = setInterval(setClock, 1000);
+    setCurrentTimeOnClock();
+    const interval = setInterval(setCurrentTimeOnClock, 1000);
 
     // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
     return () => clearInterval(interval);
