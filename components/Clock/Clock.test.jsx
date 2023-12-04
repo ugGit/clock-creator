@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Clock from "./clock";
+import Clock from "./Clock";
 
 describe("Clock Component", () => {
   it("should render without crashing", () => {

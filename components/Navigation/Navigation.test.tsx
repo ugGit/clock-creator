@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Navigation from "./navigation";
+import Navigation from "./Navigation";
 
 describe("Navigation Component", () => {
   it("should render navigation items", () => {

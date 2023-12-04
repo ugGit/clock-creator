@@ -4,7 +4,7 @@
  *
  */
 import { useEffect, useRef } from "react";
-import styles from "./clock.module.css";
+import styles from "./Clock.module.css";
 
 interface Props {
   font: string;

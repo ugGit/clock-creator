@@ -1,5 +1,5 @@
-import styles from "./layout.module.css";
-import Navigation from "./navigation/navigation";
+import styles from "./Layout.module.css";
+import Navigation from "./Navigation/Navigation";
 
 export default function Layout({ children }) {
   return (

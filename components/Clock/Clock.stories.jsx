@@ -1,4 +1,4 @@
-import Clock from './clock';
+import Clock from './Clock';
 
 export default {
   component: Clock,
