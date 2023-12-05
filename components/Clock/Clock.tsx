@@ -8,9 +8,13 @@ import styles from "./Clock.module.css";
 import PropTypes from 'prop-types';
 
 interface Props {
-  font: string;
+  /** Font used to display the numbers. */
+  font: 'sans-serif' | 'serif' | 'arial' | 'monospace';
 }
 
+/**
+ * A customaizable analog clock component.
+ */
 const Clock = ({ font = "sans-serif" }: Props) => {
   const hourHand = useRef(null);
   const minuteHand = useRef(null);

@@ -5,9 +5,10 @@ import Clock from './Clock';
 const meta: Meta = {
   title: 'Components/Clock',
   component: Clock,
+  tags: ['autodocs'],
   argTypes: {
     font: {
-      options: ['serif', 'sans-serif', 'arial', 'monospace'],
+      options: ['sans-serif', 'serif', 'arial', 'monospace'],
       control: { type: 'select' },
     },
   },
@@ -17,11 +18,9 @@ export default meta
 
 type Story = StoryObj<typeof Clock>;
 
-export const Default : Story = {};
-
-export const SansSerif : Story = {
+export const Serif : Story = {
   args: {
-    font: 'sans-serif',
+    font: 'serif',
   },
 };
 
