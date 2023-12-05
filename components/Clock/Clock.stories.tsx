@@ -1,12 +1,23 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
 import Clock from './Clock';
 
-export default {
+const meta: Meta = {
+  title: 'Components/Clock',
   component: Clock,
-  title: 'Clock',
-  tags: ['autodocs'],
+  argTypes: {
+    font: {
+      options: ['serif', 'sans-serif', 'arial', 'monospace'],
+      control: { type: 'radio' },
+    },
+  },
 };
 
-export const Default = {
+export default meta
+
+type Story = StoryObj<typeof Clock>;
+
+export const Default : Story = {
   args: {
     font: 'serif',
   },
