@@ -5,12 +5,13 @@
  */
 import { useEffect, useRef } from "react";
 import styles from "./Clock.module.css";
+import PropTypes from 'prop-types';
 
 interface Props {
   font: string;
 }
 
-export default function Clock({ font = "sans-serif" }: Props) {
+const Clock = ({ font = "sans-serif" }: Props) => {
   const hourHand = useRef(null);
   const minuteHand = useRef(null);
   const secondHand = useRef(null);
@@ -72,3 +73,10 @@ export default function Clock({ font = "sans-serif" }: Props) {
     </div>
   );
 }
+
+
+Clock.propTypes = {
+  font: PropTypes.oneOf(['sans-serif', 'serif','arial', 'monospace']).isRequired,
+};
+
+export default Clock;
