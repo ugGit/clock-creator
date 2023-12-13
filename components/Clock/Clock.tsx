@@ -79,6 +79,7 @@ const Clock = ({ romanNumerals = false, font = "sans-serif" }: Props) => {
             romanNumbers={romanNumerals}
             className={`${styles.number}`}
             style={rotation}
+            key={number}
           />
         );
       })}
