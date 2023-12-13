@@ -35,3 +35,10 @@ export const Monospace : Story = {
     font: 'monospace',
   },
 };
+
+
+export const RomanNumerals : Story = {
+  args: {
+    romanNumerals: true,
+  },
+};

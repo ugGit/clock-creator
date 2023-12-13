@@ -4,18 +4,27 @@
  *
  */
 import { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import styles from "./Clock.module.css";
-import PropTypes from 'prop-types';
+import ClockNumber from "./ClockNumber";
+
+import localFont from "next/font/local";
+const anotherFont = localFont({
+  src: "./fonts/bplatinnumerals.ttf",
+  variable: "--another-font",
+});
 
 interface Props {
   /** Font used to display the numbers. */
-  font: 'sans-serif' | 'serif' | 'arial' | 'monospace';
+  font?: "sans-serif" | "serif" | "arial" | "monospace";
+  /** Ignore font setting and use Roman Numerals instead. */
+  romanNumerals?: boolean;
 }
 
 /**
  * A customaizable analog clock component.
  */
-const Clock = ({ font = "sans-serif" }: Props) => {
+const Clock = ({ romanNumerals = false, font = "sans-serif" }: Props) => {
   const hourHand = useRef(null);
   const minuteHand = useRef(null);
   const secondHand = useRef(null);
@@ -44,9 +53,8 @@ const Clock = ({ font = "sans-serif" }: Props) => {
     // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
     return () => clearInterval(interval);
   }, []);
-
   return (
-    <div className={`${styles.clock}`} style={{ fontFamily: font }}>
+    <div className={`${styles.clock} ${anotherFont.className}`}>
       <div
         className={`${styles.hand} ${styles.hour}`}
         ref={hourHand}
@@ -80,7 +88,8 @@ const Clock = ({ font = "sans-serif" }: Props) => {
 
 
 Clock.propTypes = {
-  font: PropTypes.oneOf(['sans-serif', 'serif','arial', 'monospace']).isRequired,
+  font: PropTypes.oneOf(["sans-serif", "serif", "arial", "monospace"]),
+  romanNumerals: PropTypes.bool,
 };
 
 export default Clock;
