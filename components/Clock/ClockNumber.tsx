@@ -5,8 +5,10 @@ interface Props {
   number: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
   /** Format the number as using roman notations (e.g. 9 = IX = 1-10, or 8 = VIII = 5111) */
   romanNumbers?: boolean;
+  /** Rotate the numbers according to their position */
+  rotateNumbers?: boolean;
   className?: string;
-  style?: string;
+  style?: React.CSSProperties;
 }
 
 // a mapping from number to roman numeral
@@ -28,12 +30,20 @@ const romanNumeralMap: { [key: number]: string } = {
 const ClockNumber = ({
   number,
   romanNumbers = false,
+  rotateNumbers = true,
   className = "",
-  style = "",
+  style = {} as React.CSSProperties,
 }): Props => {
+  const counterRotation = rotateNumbers ? -1 : 0;
   return (
     <div className={className} style={style}>
-      {romanNumbers ? romanNumeralMap[number] : number}
+      <div
+        style={{
+          transform: `rotate(calc(var(--rotation) * ${counterRotation})`,
+        }}
+      >
+        {romanNumbers ? romanNumeralMap[number] : number}
+      </div>
     </div>
   );
 };
@@ -41,8 +51,9 @@ const ClockNumber = ({
 ClockNumber.propTypes = {
   number: PropTypes.number.isRequired,
   romanNumbers: PropTypes.bool,
+  rotateNumbers: PropTypes.bool,
   className: PropTypes.string,
-  style: PropTypes.string,
+  style: PropTypes.object,
 };
 
 export default ClockNumber;

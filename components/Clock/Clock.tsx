@@ -13,12 +13,18 @@ interface Props {
   font?: "sans-serif" | "serif" | "arial" | "monospace";
   /** Ignore font setting and use Roman Numerals instead. */
   romanNumerals?: boolean;
+  /** Rotate the numbers according to their position */
+  rotateNumbers?: boolean;
 }
 
 /**
  * A customaizable analog clock component.
  */
-const Clock = ({ romanNumerals = false, font = "sans-serif" }: Props) => {
+const Clock = ({
+  romanNumerals = false,
+  font = "sans-serif",
+  rotateNumbers = true,
+}: Props) => {
   const hourHand = useRef(null);
   const minuteHand = useRef(null);
   const secondHand = useRef(null);
@@ -77,6 +83,7 @@ const Clock = ({ romanNumerals = false, font = "sans-serif" }: Props) => {
           <ClockNumber
             number={number}
             romanNumbers={romanNumerals}
+            rotateNumbers={rotateNumbers}
             className={`${styles.number}`}
             style={rotation}
             key={number}
@@ -90,6 +97,7 @@ const Clock = ({ romanNumerals = false, font = "sans-serif" }: Props) => {
 Clock.propTypes = {
   font: PropTypes.oneOf(["sans-serif", "serif", "arial", "monospace"]),
   romanNumerals: PropTypes.bool,
+  rotateNumbers: PropTypes.bool,
 };
 
 export default Clock;
