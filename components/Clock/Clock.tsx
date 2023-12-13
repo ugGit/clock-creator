@@ -8,12 +8,6 @@ import PropTypes from "prop-types";
 import styles from "./Clock.module.css";
 import ClockNumber from "./ClockNumber";
 
-import localFont from "next/font/local";
-const anotherFont = localFont({
-  src: "./fonts/bplatinnumerals.ttf",
-  variable: "--another-font",
-});
-
 interface Props {
   /** Font used to display the numbers. */
   font?: "sans-serif" | "serif" | "arial" | "monospace";
@@ -54,7 +48,7 @@ const Clock = ({ romanNumerals = false, font = "sans-serif" }: Props) => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className={`${styles.clock} ${anotherFont.className}`}>
+    <div className={`${styles.clock}`}>
       <div
         className={`${styles.hand} ${styles.hour}`}
         ref={hourHand}
