@@ -61,7 +61,7 @@ const Clock = ({
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className={`${styles.clock}`}>
+    <div className={`${styles.clock}`} style={{ fontFamily: font }}>
       <div
         className={`${styles.hand} ${styles.hour}`}
         ref={hourHand}
